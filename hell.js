@@ -1,11 +1,5 @@
 //Usage in cmd: node hell.js <file name no spaces with ext>
 
-
-const readline = require('readline').createInterface({
-    input: process.stdin,
-    output: process.stdout
-})
-
 //From https://gist.github.com/letanure/10555668
 
 //https://www.pharmabraille.com/braille-codes/unified-english-braille-ueb-code/
@@ -126,7 +120,7 @@ var brailleTable = {
     '⠰':  '⠰',
 }
 
-const englishTable = {
+const normalTable = {
     '⠼⠁':  '1',
     '⠼⠃':  '2',
     '⠼⠉':  '3',
@@ -250,29 +244,57 @@ function convertToBraille(text){
     };
     return brailleText;
 }
+function convertToNormal(text){
+    var normalext = '';
+    for (var i = 0; i < text.length; i++) {
+        normalext += normalTable[text[i]]
+        if (normalTable[text[i]] == undefined) {
+            console.log(text[i]);
+        }
+    };
+    return normalext;
+}
 
 // Make sure we got a filename on the command line.
-if (process.argv.length < 3) {
-    console.log('Usage: node ' + process.argv[1] + ' FILENAME');
+if (process.argv.length < 3 || !process.argv[3]) {
+    console.log('Usage: node ' + process.argv[1] + ' FILENAME' + ' TYPE');
     process.exit(1);
 }
     // Read the file and print its contents.
 var fs = require('fs')
-    , filename = process.argv[2];
+    , file = process.argv[2];
 
-fs.readFile(filename, 'utf8', function(err, data) {
+fs.readFile(file, 'utf8', function(err, data) {
     if (err) throw err;
-    console.log('OK: ' + filename);
+    console.log('OK: ' + file);
     //console.log(data)
 
-    fs.writeFile(`BRAILLE--${filename}`, convertToBraille(data), function(err) {
-        if(err) {
-            return console.log(err);
-        }
-    
-        console.log("The file was saved!");
-        process.exit();
-    }); 
+    const fileSplit = file.split(".");
+    const filename = fileSplit[0];
+    const ext = fileSplit[1];
+
+    //console.log(filename);
+    //console.log(ext);
+
+    if (process.argv[3] == "toBraille") {
+        fs.writeFile(`${filename}--BRAILLE.${ext}`, convertToBraille(data), function(err) {
+            if(err) {
+                return console.log(err);
+            }
+        
+            console.log("The file was saved!");
+            process.exit();
+        }); 
+    } else if (process.argv[3] == "toNormal") {
+        fs.writeFile(`${filename}--NORMAL.${ext}`, convertToNormal(data), function(err) {
+            if(err) {
+                return console.log(err);
+            }
+        
+            console.log("The file was saved!");
+            process.exit();
+        }); 
+    }
 });
 
 /*
