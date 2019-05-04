@@ -4,7 +4,7 @@ Project was made as a meme.
 
 # How to setup
 1. Download Zip
-2. Get node.js
+2. Download and install `node.js` from [Here](https://nodejs.org/)
 3. Unzip the zip file in a folder all alone
 4. Create a `.txt` file and name it what ever you want
 5. Add what ever text you want to be Translated into the file, then save it
