@@ -1,11 +1,37 @@
-//Usage in cmd: node hell.js <file name no spaces with ext>
+/*
 
-//From https://gist.github.com/letanure/10555668
+MIT License
 
-//https://www.pharmabraille.com/braille-codes/unified-english-braille-ueb-code/
-// better ^^^^^
+Copyright (c) 2019 Huskydog9988
 
-//https://www.pharmabraille.com/pharmaceutical-braille/the-braille-alphabet/
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Usage in cmd: node hell.js <file name no spaces with ext>
+
+From https://gist.github.com/letanure/10555668
+
+https://www.pharmabraille.com/braille-codes/unified-english-braille-ueb-code/
+better ^^^^^
+
+https://www.pharmabraille.com/pharmaceutical-braille/the-braille-alphabet/
+
+*/
 
 console.log(`\ndb    db d8b   db d888888b  .o88b.  .d88b.  d8888b. d88888b 
 88    88 888o  88   \`88'   d8P  Y8 .8P  Y8. 88  \`8D 88'     
