@@ -7,6 +7,29 @@
 
 //https://www.pharmabraille.com/pharmaceutical-braille/the-braille-alphabet/
 
+console.log(`\ndb    db d8b   db d888888b  .o88b.  .d88b.  d8888b. d88888b 
+88    88 888o  88   \`88'   d8P  Y8 .8P  Y8. 88  \`8D 88'     
+88    88 88V8o 88    88    8P      88    88 88   88 88ooooo 
+88    88 88 V8o88    88    8b      88    88 88   88 88~~~~~ 
+88b  d88 88  V888   .88.   Y8b  d8 \`8b  d8' 88  .8D 88.     
+~Y8888P' VP   V8P Y888888P  \`Y88P'  \`Y88P'  Y8888D' Y88888P 
+                                                            
+                                                            
+d8888b. d8888b.  .d8b.  d888888b db      db      d88888b 
+88  \`8D 88  \`8D d8' \`8b   \`88'   88      88      88'     
+88oooY' 88oobY' 88ooo88    88    88      88      88ooooo 
+88~~~b. 88\`8b   88~~~88    88    88      88      88~~~~~ 
+88   8D 88 \`88. 88   88   .88.   88booo. 88booo. 88.     
+Y8888P' 88   YD YP   YP Y888888P Y88888P Y88888P Y88888P 
+                                                         
+                                                         
+d888888b d8888b.  .d8b.  d8b   db .d8888. db       .d8b.  d888888b  .d88b.  d8888b. 
+\`~~88~~' 88  \`8D d8' \`8b 888o  88 88'  YP 88      d8' \`8b \`~~88~~' .8P  Y8. 88  \`8D 
+   88    88oobY' 88ooo88 88V8o 88 \`8bo.   88      88ooo88    88    88    88 88oobY' 
+   88    88\`8b   88~~~88 88 V8o88   \`Y8b. 88      88~~~88    88    88    88 88\`8b   
+   88    88 \`88. 88   88 88  V888 db   8D 88booo. 88   88    88    \`8b  d8' 88 \`88. 
+   YP    88   YD YP   YP VP   V8P \`8888Y' Y88888P YP   YP    YP     \`Y88P'  88   YD \n`);
+
 var brailleTable = {
     '1':  '⠼⠁',
     '2':  '⠼⠃',
