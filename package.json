@@ -1,0 +1,23 @@
+{
+  "name": "unicode-braille-translator",
+  "version": "1.0.0",
+  "description": "Creates hell on earth for the user trying to decode the braille",
+  "main": "hell.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Huskydog9988/Unicode-Braille-Translator.git"
+  },
+  "keywords": [
+    "hell",
+    "braille"
+  ],
+  "author": "Huskydog9988",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Huskydog9988/Unicode-Braille-Translator/issues"
+  },
+  "homepage": "https://github.com/Huskydog9988/Unicode-Braille-Translator#readme"
+}
