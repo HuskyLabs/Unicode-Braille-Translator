@@ -1,6 +1,5 @@
 # Unicode Braille Translator
-Only makes text into Unicode Braille as of right now. Adding a way to make Unicode into Braille soon.
-Project was made as a meme.
+Easiest way to make anything a shit-post/more green text worthy.
 
 # Types
 1. `toBraille`
