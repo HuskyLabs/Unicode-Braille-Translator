@@ -286,19 +286,21 @@ const aJ = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j",  "A", "B", "C", "D
 function convertToBraille(text){
     var brailleText = '';
     for (var i = 0; i < text.length; i++) {
-        brailleText += brailleTable[text[i]]
-        if (brailleTable[text[i]] == undefined) {
-            console.log(text[i]);
+        if (brailleTable.hasOwnProperty(text[i])) {
+            brailleText += brailleTable[text[i]];
+        } else {
+            brailleText += text[i];
         }
     };
     return brailleText;
 }
 function convertToNormal(text){
-    var normalext = '';
+    var normalText = '';
     for (var i = 0; i < text.length; i++) {
-        normalext += normalTable[text[i]]
-        if (normalTable[text[i]] == undefined) {
-            console.log(text[i]);
+        if (normalTable.hasOwnProperty(text[i])) {
+            normalText += normalTable[text[i]];
+        } else {
+            normalText += text[i];
         }
     };
     return normalext;

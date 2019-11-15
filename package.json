@@ -1,8 +1,8 @@
 {
   "name": "unicode-braille-translator",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Creates hell on earth for the user trying to decode the braille",
-  "main": "hell.js",
+  "main": "./src/index",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,7 +12,10 @@
   },
   "keywords": [
     "hell",
-    "braille"
+    "braille",
+    "translator",
+    "translate",
+    "unicode"
   ],
   "author": "Huskydog9988",
   "license": "MIT",
