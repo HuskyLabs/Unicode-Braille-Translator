@@ -4,7 +4,7 @@
   "description": "An easy, and simple npm package that converts text to braille and back. Robust and reliable with an ever increasing accuracy.",
   "main": "./src/index",
   "scripts": {
-    "test": "node /src/test"
+    "test": "node ./src/test"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,6 @@
 const ubt = require("./index");
 
-str = ". / ( ) ' \" * & ^ % $ # @ ! ` ~ ; : < > , | + = - _ "
+str = " | \\ "
 
 console.log(ubt.convertToBraille(str));
 console.log(ubt.convertToNormal(ubt.convertToBraille(str)));
