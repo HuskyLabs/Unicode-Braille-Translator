@@ -1,6 +1,6 @@
 {
   "name": "unicode-braille-translator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Creates hell on earth for the user trying to decode the braille",
   "main": "./src/index",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Huskydog9988/Unicode-Braille-Translator.git"
+    "url": "git+https://github.com/HuskyLabs/Unicode-Braille-Translator.git"
   },
   "keywords": [
     "hell",
@@ -17,10 +17,10 @@
     "translate",
     "unicode"
   ],
-  "author": "Huskydog9988",
+  "author": "HuskyLabs",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Huskydog9988/Unicode-Braille-Translator/issues"
+    "url": "https://github.com/HuskyLabs/Unicode-Braille-Translator/issues"
   },
-  "homepage": "https://github.com/Huskydog9988/Unicode-Braille-Translator#readme"
+  "homepage": "https://github.com/HuskyLabs/Unicode-Braille-Translator#readme"
 }
