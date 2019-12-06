@@ -1,3 +1,38 @@
+/*
+
+MIT License
+
+Copyright (c) 2019 Huskydog9988
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Usage in cmd: node hell.js <file name no spaces with ext>
+
+From https://gist.github.com/letanure/10555668
+
+https://www.pharmabraille.com/braille-codes/unified-english-braille-ueb-code/
+better ^^^^^
+
+https://www.pharmabraille.com/pharmaceutical-braille/the-braille-alphabet/
+
+*/
+
 var brailleTable = {
     '1':  '⠼⠁',
     '2':  '⠼⠃',
@@ -75,7 +110,6 @@ var brailleTable = {
     //start of new section
     " ":  " ",
     ":":  "⠒",
-    "\n":  "\n",
     '“':  '⠄⠶',
     '"':  '⠘⠦',
     '”':  '⠘⠴',
@@ -241,6 +275,7 @@ exports.convertToBraille = (text) => {
         if (brailleTable.hasOwnProperty(text[i])) {
             brailleText += brailleTable[text[i]];
         } else {
+            //console.log(text[i])
             brailleText += text[i];
         }
     };
@@ -250,11 +285,19 @@ exports.convertToBraille = (text) => {
 exports.convertToNormal = (text) => {
     var normalText = '';
     for (var i = 0; i < text.length; i++) {
-        if (normalTable.hasOwnProperty(text[i])) {
-            normalText += normalTable[text[i]];
-        } else {
-            normalText += text[i];
+        if (text[i] == "⠠") {
+            continue;
+        } else{
+            if (text[i-1] == "⠠" /*Capital Indicator*/ ) {
+                normalText += normalTable[text[i-1] + text[i]];
+                continue;
+            }
+            if (normalTable.hasOwnProperty(text[i])) {
+                normalText += normalTable[text[i]];
+            } else {
+                normalText += text[i];
+            }
         }
     };
-    return normalext;
+    return normalText;
 }

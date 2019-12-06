@@ -1,17 +1,16 @@
 {
   "name": "unicode-braille-translator",
-  "version": "0.1.1",
-  "description": "Creates hell on earth for the user trying to decode the braille",
+  "version": "0.1.2",
+  "description": "An easy, and simple npm package that converts text to braille and back. Robust and reliable with an ever increasing accuracy.",
   "main": "./src/index",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node /src/test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HuskyLabs/Unicode-Braille-Translator.git"
   },
   "keywords": [
-    "hell",
     "braille",
     "translator",
     "translate",
