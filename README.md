@@ -1,3 +1,5 @@
+[![](https://img.shields.io/npm/dt/unicode-braille-translator)](https://www.npmjs.com/package/unicode-braille-translator) [![forthebadge](https://forthebadge.com/images/badges/designed-in-ms-paint.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/mom-made-pizza-rolls.svg)](https://forthebadge.com) [![](https://img.shields.io/npm/v/unicode-braille-translator)](https://www.npmjs.com/package/unicode-braille-translator)
+
 # Install
 ```
 npm install unicode-braille-translator

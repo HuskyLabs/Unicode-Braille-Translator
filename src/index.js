@@ -1,5 +1,4 @@
 /*
-
 MIT License
 
 Copyright (c) 2019 Huskydog9988
@@ -22,6 +21,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+-----------------------------------------------------------------------------------
+
 Usage in cmd: node hell.js <file name no spaces with ext>
 
 From https://gist.github.com/letanure/10555668
@@ -30,7 +31,6 @@ https://www.pharmabraille.com/braille-codes/unified-english-braille-ueb-code/
 better ^^^^^
 
 https://www.pharmabraille.com/pharmaceutical-braille/the-braille-alphabet/
-
 */
 
 var brailleTable = {
@@ -266,7 +266,6 @@ https://www.pharmabraille.com/braille-codes/unified-english-braille-ueb-code/
 better ^^^^^
 
 https://www.pharmabraille.com/pharmaceutical-braille/the-braille-alphabet/
-
 */
 
 exports.convertToBraille = (text) => {
@@ -286,11 +285,12 @@ exports.convertToNormal = (text) => {
     var normalText = '';
     for (var i = 0; i < text.length; i++) {
         if (text[i] == "⠠") {
+            //If capital indicator
             continue;
         } else{
             if (text[i-1] == "⠠" /*Capital Indicator*/ ) {
-                normalText += normalTable[text[i-1] + text[i]];
-                continue;
+                normalText += normalTable[text[i-1] + text[i]]; //Searches table for capital indicator and the following letter
+                continue; //Breaks to avoid possible repeat of letter 
             }
             if (normalTable.hasOwnProperty(text[i])) {
                 normalText += normalTable[text[i]];
