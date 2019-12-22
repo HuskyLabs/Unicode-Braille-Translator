@@ -1,0 +1,10 @@
+Based upon the work done here: https://gist.github.com/letanure/10555668
+
+Rules of Unified English Braille, 2013: https://www.pharmabraille.com/wp-content/uploads/2015/11/Rules-of-Unified-English-Braille-2013.pdf
+    Page 40 is start of indicators
+
+UEB Pharmabraille braille table: https://www.pharmabraille.com/braille-codes/unified-english-braille-ueb-code/
+
+Pharmabraille braille table: https://www.pharmabraille.com/pharmaceutical-braille/the-braille-alphabet/
+
+Chars Page 40 https://www.rapidtables.com/code/text/unicode-characters.html

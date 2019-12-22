@@ -6,9 +6,9 @@ npm install unicode-braille-translator
 ```
 
 # Unicode Braille Translator
-An easy, and simple npm package that converts text to braille and back. Robust and reliable with an ever increasing accuracy.
+An easy, and simple npm package to use that converts text to braille and back. Robust and reliable with an ever increasing accuracy.
 
-## ⚠ Warning ⚠ : This is api is still being developed, expect some wrong "translations."
+## ⚠ Warning ⚠ : This is api is still being developed, expect some wrong "translations." Also this project only currently supports Unified English Braille (UEB)
 
 # Docs
 **Convert Text To Braille**

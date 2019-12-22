@@ -23,281 +23,45 @@ SOFTWARE.
 
 -----------------------------------------------------------------------------------
 
-Usage in cmd: node hell.js <file name no spaces with ext>
-
-From https://gist.github.com/letanure/10555668
-
-https://www.pharmabraille.com/braille-codes/unified-english-braille-ueb-code/
-better ^^^^^
-
-https://www.pharmabraille.com/pharmaceutical-braille/the-braille-alphabet/
+Usage found in README.md
 */
 
-var brailleTable = {
-    '1':  '⠼⠁',
-    '2':  '⠼⠃',
-    '3':  '⠼⠉',
-    '4':  '⠼⠙',
-    '5':  '⠼⠑',
-    '6':  '⠼⠋',
-    '7':  '⠼⠛',
-    '8':  '⠼⠓',
-    '9':  '⠼⠊',
-    '0':  '⠼⠚',
-    'A':  '⠠⠁',
-    'B':  '⠠⠃',
-    'C':  '⠠⠉',
-    'D':  '⠠⠙',
-    'E':  '⠠⠑',
-    'F':  '⠠⠋',
-    'G':  '⠠⠛',
-    'H':  '⠠⠓',
-    'I':  '⠠⠊',
-    'J':  '⠠⠚',
-    'K':  '⠠⠅',
-    'L':  '⠠⠇',
-    'M':  '⠠⠍',
-    'N':  '⠠⠝',
-    'O':  '⠠⠕',
-    'P':  '⠠⠏',
-    'Q':  '⠠⠟',
-    'R':  '⠠⠗',
-    'S':  '⠠⠎',
-    'T':  '⠠⠞',
-    'U':  '⠠⠥',
-    'V':  '⠠⠧',
-    'W':  '⠠⠺',
-    'X':  '⠠⠭',
-    'Y':  '⠠⠽',
-    'Z':  '⠠⠵',
-    'a':  '⠁',
-    'b':  '⠃',
-    'c':  '⠉',
-    'd':  '⠙',
-    'e':  '⠑',
-    'f':  '⠋',
-    'g':  '⠛',
-    'h':  '⠓',
-    'i':  '⠊',
-    'j':  '⠚',
-    'k':  '⠅',
-    'l':  '⠇',
-    'm':  '⠍',
-    'n':  '⠝',
-    'o':  '⠕',
-    'p':  '⠏',
-    'q':  '⠟',
-    'r':  '⠗',
-    's':  '⠎',
-    't':  '⠞',
-    'u':  '⠥',
-    'v':  '⠧',
-    'w':  '⠺',
-    'x':  '⠭',
-    'y':  '⠽',
-    'z':  '⠵',
-    '.': '⠲',
-    ',':  '⠂',
-    '?': '⠦',
-    ';':  '⠆',
-    '!':  '⠖',
-    '<':  '⠦',
-    '>':  '⠴',
-    '\\': '⠶',
-    '-':  '⠤',
-    "'":  '⠄',
-
-    //start of new section
-    " ":  " ",
-    ":":  "⠒",
-    '“':  '⠄⠶',
-    '"':  '⠘⠦',
-    '”':  '⠘⠴',
-    '‘':  "⠄⠦",
-    '’':  "⠄⠴",
-    '(':  '⠐⠣',
-    ')':  '⠐⠜',
-    '/':  '⠸⠌',
-    '\\':  '⠸⠡',
-    '–':  '⠤',
-    //'–':  '⠠⠤',
-    '—':  '⠐⠠⠤',
-
-    '&':  '⠈⠯',
-
-    '*':  '⠐⠔',
-    '@':  '⠈⠁',
-    '©':  '⠘⠉',
-    '®':  '⠘⠗',
-    '™':  '⠘⠞',
-    '°':  '⠘⠚',
-    '%':  '⠨⠴',
-    '+':  '⠐⠖',
-    '−':  '⠐⠤',
-    '=':  '⠐⠶',
-    '×':  '⠐⠦',
-    '÷':  '⠐⠌',
-
-    '½':  '⠼⠁⠌⠃',
-    '2¾':  '⠼⠃⠼⠉⠌⠙',
-
-    //below is grade 1 symbol indicator
-    '⠰':  '⠰',
-}
-
-const normalTable = {
-    '⠼⠁':  '1',
-    '⠼⠃':  '2',
-    '⠼⠉':  '3',
-    '⠼⠙':  '4',
-    '⠼⠑':  '5',
-    '⠼⠋':  '6',
-    '⠼⠛':  '7',
-    '⠼⠓':  '8',
-    '⠼⠊':  '9',
-    '⠼⠚':  '0',
-    '⠠⠁':  'A',
-    '⠠⠃':  'B',
-    '⠠⠉':  'C',
-    '⠠⠙':  'D',
-    '⠠⠑':  'E',
-    '⠠⠋':  'F',
-    '⠠⠛':  'G',
-    '⠠⠓':  'H',
-    '⠠⠊':  'I',
-    '⠠⠚':  'J',
-    '⠠⠅':  'K',
-    '⠠⠇':  'L',
-    '⠠⠍':  'M',
-    '⠠⠝':  'N',
-    '⠠⠕':  'O',
-    '⠠⠏':  'P',
-    '⠠⠟':  'Q',
-    '⠠⠗':  'R',
-    '⠠⠎':  'S',
-    '⠠⠞':  'T',
-    '⠠⠥':  'U',
-    '⠠⠧':  'V',
-    '⠠⠺':  'W',
-    '⠠⠭':  'X',
-    '⠠⠽':  'Y',
-    '⠠⠵':  'Z',
-    '⠁':  'a',
-    '⠃':  'b',
-    '⠉':  'c',
-    '⠙':  'd',
-    '⠑':  'e',
-    '⠋':  'f',
-    '⠛':  'g',
-    '⠓':  'h',
-    '⠊':  'i',
-    '⠚':  'j',
-    '⠅':  'k',
-    '⠇':  'l',
-    '⠍':  'm',
-    '⠝':  'n',
-    '⠕':  'o',
-    '⠏':  'p',
-    '⠟':  'q',
-    '⠗':  'r',
-    '⠎':  's',
-    '⠞':  't',
-    '⠥':  'u',
-    '⠧':  'v',
-    '⠺':  'w',
-    '⠭':  'x',
-    '⠽':  'y',
-    '⠵':  'z',
-    '⠲':  '.',
-    '⠂':  ',',
-    '⠦':  '?',
-    '⠆':  ';',
-    '⠖':  '!',
-    //'<':  '⠦',
-    '⠴':  '>',
-    '⠶': '\\',
-    '⠤':  '-',
-    "⠄":  "'",
-
-    //start of new section
-    " ":  " ",
-
-    '⠄⠶':  '“',
-    '⠘⠦':  '“',
-    '⠘⠴':  '”',
-    '⠄⠦':  "‘",
-    '⠄⠴':  "’",
-    '⠐⠣':  '(',
-    '⠐⠜':  ')',
-    '⠸⠌':  '/',
-    '⠸⠡':  '\\',
-    '⠤':  '–',
-    '⠠⠤':  '–',
-    '⠐⠠⠤':  '—',
-
-    '⠈⠯':  '&',
-
-    '⠐⠔':  '*',
-    '⠈⠁':  '@',
-    '⠘⠉':  '©',
-    '⠘⠗':  '®',
-    '⠘⠞':  '™',
-    '⠘⠚':  '°',
-    '⠨⠴':  '%',
-    '⠐⠖':  '+',
-    '⠐⠤':  '−',
-    '⠐⠶':  '=',
-    '⠐⠦':  '×',
-    '⠐⠌':  '÷',
-
-    '⠼⠁⠌⠃':  '½',
-    '⠼⠃⠼⠉⠌⠙':  '2¾',
-
-    //below is grade 1 symbol indicator
-    '⠰':  '⠰',
-}
-
-const aJ = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j",  "A", "B", "C", "D", "E", "F", "G", "H", "I", "J",];
-
-/*
-Based on https://gist.github.com/letanure/10555668
-
-https://www.pharmabraille.com/braille-codes/unified-english-braille-ueb-code/
-better ^^^^^
-
-https://www.pharmabraille.com/pharmaceutical-braille/the-braille-alphabet/
-*/
+const uebTable = require("./tables/ueb");
 
 exports.convertToBraille = (text) => {
-    var brailleText = '';
+    var returnText = "";
     for (var i = 0; i < text.length; i++) {
-        if (brailleTable.hasOwnProperty(text[i])) {
-            brailleText += brailleTable[text[i]];
+        if (uebTable.braille.hasOwnProperty(text[i])) {
+            returnText += uebTable.braille[text[i]];
         } else {
             //console.log(text[i])
-            brailleText += text[i];
+            returnText += text[i];
         }
     };
-    return brailleText;
+    return returnText;
 }
 
-exports.convertToNormal = (text) => {
-    var normalText = '';
+exports.convertToNormal = (text, country) => {
+    var returnText = "";
     for (var i = 0; i < text.length; i++) {
-        if (text[i] == "⠠") {
-            //If capital indicator
+        if (text[i] === "⠠"/*Capital*/ || text[i] === "⠼"/*Number*/ || text[i] === "⠫"/*Shape*/) {
+            //If capital, number or shape, indicator
             continue;
         } else{
-            if (text[i-1] == "⠠" /*Capital Indicator*/ ) {
-                normalText += normalTable[text[i-1] + text[i]]; //Searches table for capital indicator and the following letter
-                continue; //Breaks to avoid possible repeat of letter 
+            if (text[i-1] === "⠠" /*Capital Indicator*/ ) {
+                returnText += uebTable.normal[text[i-1] + text[i]]; //Searches table for indicator and the following char
+                continue; //Breaks to avoid repeat of char 
             }
-            if (normalTable.hasOwnProperty(text[i])) {
-                normalText += normalTable[text[i]];
-            } else {
-                normalText += text[i];
+            if (text[i-1] === "⠼" /*Number Indicator*/ ) {
+                returnText += uebTable.normal[text[i-1] + text[i]]; //Searches table for indicator and the following char
+                continue; //Breaks to avoid repeat of char 
+            }
+            if (uebTable.normal.hasOwnProperty(text[i])/*Checks if char is in table*/) {
+                returnText += uebTable.normal[text[i]];
+            } else /*If not in table*/ {
+                returnText += text[i];
             }
         }
     };
-    return normalText;
+    return returnText;
 }
