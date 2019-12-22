@@ -1,6 +1,6 @@
 {
   "name": "unicode-braille-translator",
-  "version": "0.1.4",
+  "version": "0.1.4.1",
   "description": "An easy, and simple npm package that converts text to braille and back. Robust and reliable with an ever increasing accuracy.",
   "main": "./src/index",
   "scripts": {
