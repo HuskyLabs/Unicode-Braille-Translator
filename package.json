@@ -1,10 +1,20 @@
 {
   "name": "unicode-braille-translator",
-  "version": "0.1.5",
+  "version": "0.1.6",
+  "type": "commonjs",
   "description": "An easy, and simple npm package that converts text to braille and back. Robust and reliable with an ever increasing accuracy.",
-  "main": "./src/index",
+  "main": "./dist/index",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "test": "node ./src/test"
+    "test": "npx ts-node src/test.ts",
+    "compile": "tsc -p tsconfig.json",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "checkFormat": "prettier --check \"src/**/*.ts\"",
+    "build": "npm run lint && npm run format && npm run compile"
+  },
+  "engines": {
+    "node": ">=12.x"
   },
   "repository": {
     "type": "git",
@@ -21,5 +31,11 @@
   "bugs": {
     "url": "https://github.com/HuskyLabs/Unicode-Braille-Translator/issues"
   },
-  "homepage": "https://github.com/HuskyLabs/Unicode-Braille-Translator#readme"
+  "homepage": "https://github.com/HuskyLabs/Unicode-Braille-Translator#readme",
+  "devDependencies": {
+    "prettier": "^2.0.5",
+    "tslint": "^6.1.2",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.9.3"
+  }
 }
