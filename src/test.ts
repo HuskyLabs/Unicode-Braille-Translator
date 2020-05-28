@@ -7,7 +7,10 @@ const testString: string =
 test(testString);
 
 async function test(text: string) {
+  // Convert noraml chars to braille chars
   const braille: string = await translator.toBraille(text);
+
+  // Convert braille chars to normal chars
   const toNormal: string = await translator.toNormal(braille);
 
   // tslint:disable-next-line:no-console
