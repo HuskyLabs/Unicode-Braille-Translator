@@ -18,16 +18,16 @@ An easy, and simple npm package to use that converts text to braille and back. R
 const UBT = require("unicode-braille-translator");
 
 const translator = new UBT.default();
-const testString: string =
+const testString =
   'ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz `1234567890-= ~!@#$%^&*()_+ ,./ <>? /*-+. ;: \'" []{} \\|';
 
 test(testString);
-async function test(text: string) {
+async function test(text) {
   // Convert noraml chars to braille chars
-  const braille: string = await translator.toBraille(text);
+  const braille = await translator.toBraille(text);
 
   // Convert braille chars to normal chars
-  const toNormal: string = await translator.toNormal(braille);
+  const toNormal = await translator.toNormal(braille);
 
   console.log(text);
   console.log(braille);
